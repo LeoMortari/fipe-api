@@ -1,0 +1,392 @@
+{
+  "marcas": [
+    {
+      "label": "Acura",
+      "value": "1"
+    },
+    {
+      "label": "Agrale",
+      "value": "2"
+    },
+    {
+      "label": "Alfa Romeo",
+      "value": "3"
+    },
+    {
+      "label": "AM Gen",
+      "value": "4"
+    },
+    {
+      "label": "Asia Motors",
+      "value": "5"
+    },
+    {
+      "label": "ASTON MARTIN",
+      "value": "189"
+    },
+    {
+      "label": "Audi",
+      "value": "6"
+    },
+    {
+      "label": "Baby",
+      "value": "207"
+    },
+    {
+      "label": "BMW",
+      "value": "7"
+    },
+    {
+      "label": "BRM",
+      "value": "8"
+    },
+    {
+      "label": "Bugre",
+      "value": "123"
+    },
+    {
+      "label": "BYD",
+      "value": "238"
+    },
+    {
+      "label": "CAB Motors",
+      "value": "236"
+    },
+    {
+      "label": "Cadillac",
+      "value": "10"
+    },
+    {
+      "label": "Caoa Chery",
+      "value": "245"
+    },
+    {
+      "label": "Caoa Chery/Chery",
+      "value": "161"
+    },
+    {
+      "label": "CBT Jipe",
+      "value": "11"
+    },
+    {
+      "label": "CHANA",
+      "value": "136"
+    },
+    {
+      "label": "CHANGAN",
+      "value": "182"
+    },
+    {
+      "label": "Chrysler",
+      "value": "12"
+    },
+    {
+      "label": "Citroën",
+      "value": "13"
+    },
+    {
+      "label": "Cross Lander",
+      "value": "14"
+    },
+    {
+      "label": "D2D Motors",
+      "value": "241"
+    },
+    {
+      "label": "Daewoo",
+      "value": "15"
+    },
+    {
+      "label": "Daihatsu",
+      "value": "16"
+    },
+    {
+      "label": "DFSK",
+      "value": "246"
+    },
+    {
+      "label": "Dodge",
+      "value": "17"
+    },
+    {
+      "label": "EFFA",
+      "value": "147"
+    },
+    {
+      "label": "Engesa",
+      "value": "18"
+    },
+    {
+      "label": "Envemo",
+      "value": "19"
+    },
+    {
+      "label": "Ferrari",
+      "value": "20"
+    },
+    {
+      "label": "Fiat",
+      "value": "21"
+    },
+    {
+      "label": "Fibravan",
+      "value": "149"
+    },
+    {
+      "label": "Ford",
+      "value": "22"
+    },
+    {
+      "label": "FOTON",
+      "value": "190"
+    },
+    {
+      "label": "Fyber",
+      "value": "170"
+    },
+    {
+      "label": "GEELY",
+      "value": "199"
+    },
+    {
+      "label": "GM - Chevrolet",
+      "value": "23"
+    },
+    {
+      "label": "GREAT WALL",
+      "value": "153"
+    },
+    {
+      "label": "Gurgel",
+      "value": "24"
+    },
+    {
+      "label": "GWM",
+      "value": "240"
+    },
+    {
+      "label": "HAFEI",
+      "value": "152"
+    },
+    {
+      "label": "HITECH ELECTRIC",
+      "value": "214"
+    },
+    {
+      "label": "Honda",
+      "value": "25"
+    },
+    {
+      "label": "Hyundai",
+      "value": "26"
+    },
+    {
+      "label": "Isuzu",
+      "value": "27"
+    },
+    {
+      "label": "IVECO",
+      "value": "208"
+    },
+    {
+      "label": "JAC",
+      "value": "177"
+    },
+    {
+      "label": "Jaguar",
+      "value": "28"
+    },
+    {
+      "label": "Jeep",
+      "value": "29"
+    },
+    {
+      "label": "JINBEI",
+      "value": "154"
+    },
+    {
+      "label": "JPX",
+      "value": "30"
+    },
+    {
+      "label": "Kia Motors",
+      "value": "31"
+    },
+    {
+      "label": "Lada",
+      "value": "32"
+    },
+    {
+      "label": "LAMBORGHINI",
+      "value": "171"
+    },
+    {
+      "label": "Land Rover",
+      "value": "33"
+    },
+    {
+      "label": "Lexus",
+      "value": "34"
+    },
+    {
+      "label": "LIFAN",
+      "value": "168"
+    },
+    {
+      "label": "LOBINI",
+      "value": "127"
+    },
+    {
+      "label": "Lotus",
+      "value": "35"
+    },
+    {
+      "label": "Mahindra",
+      "value": "140"
+    },
+    {
+      "label": "Maserati",
+      "value": "36"
+    },
+    {
+      "label": "Matra",
+      "value": "37"
+    },
+    {
+      "label": "Mazda",
+      "value": "38"
+    },
+    {
+      "label": "Mclaren",
+      "value": "211"
+    },
+    {
+      "label": "Mercedes-Benz",
+      "value": "39"
+    },
+    {
+      "label": "Mercury",
+      "value": "40"
+    },
+    {
+      "label": "MG",
+      "value": "167"
+    },
+    {
+      "label": "MINI",
+      "value": "156"
+    },
+    {
+      "label": "Mitsubishi",
+      "value": "41"
+    },
+    {
+      "label": "Miura",
+      "value": "42"
+    },
+    {
+      "label": "Nissan",
+      "value": "43"
+    },
+    {
+      "label": "Peugeot",
+      "value": "44"
+    },
+    {
+      "label": "Plymouth",
+      "value": "45"
+    },
+    {
+      "label": "Pontiac",
+      "value": "46"
+    },
+    {
+      "label": "Porsche",
+      "value": "47"
+    },
+    {
+      "label": "RAM",
+      "value": "185"
+    },
+    {
+      "label": "RELY",
+      "value": "186"
+    },
+    {
+      "label": "Renault",
+      "value": "48"
+    },
+    {
+      "label": "Rolls-Royce",
+      "value": "195"
+    },
+    {
+      "label": "Rover",
+      "value": "49"
+    },
+    {
+      "label": "Saab",
+      "value": "50"
+    },
+    {
+      "label": "Saturn",
+      "value": "51"
+    },
+    {
+      "label": "Seat",
+      "value": "52"
+    },
+    {
+      "label": "SERES",
+      "value": "247"
+    },
+    {
+      "label": "SHINERAY",
+      "value": "183"
+    },
+    {
+      "label": "smart",
+      "value": "157"
+    },
+    {
+      "label": "SSANGYONG",
+      "value": "125"
+    },
+    {
+      "label": "Subaru",
+      "value": "54"
+    },
+    {
+      "label": "Suzuki",
+      "value": "55"
+    },
+    {
+      "label": "TAC",
+      "value": "165"
+    },
+    {
+      "label": "Toyota",
+      "value": "56"
+    },
+    {
+      "label": "Troller",
+      "value": "57"
+    },
+    {
+      "label": "Volvo",
+      "value": "58"
+    },
+    {
+      "label": "VW - VolksWagen",
+      "value": "59"
+    },
+    {
+      "label": "Wake",
+      "value": "163"
+    },
+    {
+      "label": "Walk",
+      "value": "120"
+    }
+  ]
+}

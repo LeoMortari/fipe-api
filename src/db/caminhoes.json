@@ -1,0 +1,116 @@
+{
+  "marcas": [
+    {
+      "label": "AGRALE",
+      "value": "102"
+    },
+    {
+      "label": "BEPOBUS",
+      "value": "206"
+    },
+    {
+      "label": "CHEVROLET",
+      "value": "103"
+    },
+    {
+      "label": "CICCOBUS",
+      "value": "121"
+    },
+    {
+      "label": "DAF",
+      "value": "197"
+    },
+    {
+      "label": "EFFA-JMC",
+      "value": "179"
+    },
+    {
+      "label": "FIAT",
+      "value": "104"
+    },
+    {
+      "label": "FORD",
+      "value": "105"
+    },
+    {
+      "label": "FOTON",
+      "value": "191"
+    },
+    {
+      "label": "GMC",
+      "value": "106"
+    },
+    {
+      "label": "HYUNDAI",
+      "value": "181"
+    },
+    {
+      "label": "IVECO",
+      "value": "122"
+    },
+    {
+      "label": "JAC",
+      "value": "188"
+    },
+    {
+      "label": "MAN",
+      "value": "184"
+    },
+    {
+      "label": "MARCOPOLO",
+      "value": "108"
+    },
+    {
+      "label": "MASCARELLO",
+      "value": "196"
+    },
+    {
+      "label": "MAXIBUS",
+      "value": "194"
+    },
+    {
+      "label": "MERCEDES-BENZ",
+      "value": "109"
+    },
+    {
+      "label": "NAVISTAR",
+      "value": "110"
+    },
+    {
+      "label": "NEOBUS",
+      "value": "111"
+    },
+    {
+      "label": "PUMA-ALFA",
+      "value": "112"
+    },
+    {
+      "label": "SAAB-SCANIA",
+      "value": "113"
+    },
+    {
+      "label": "SCANIA",
+      "value": "114"
+    },
+    {
+      "label": "SHACMAN",
+      "value": "193"
+    },
+    {
+      "label": "SINOTRUK",
+      "value": "166"
+    },
+    {
+      "label": "VOLKSWAGEN",
+      "value": "115"
+    },
+    {
+      "label": "VOLVO",
+      "value": "116"
+    },
+    {
+      "label": "WALKBUS",
+      "value": "144"
+    }
+  ]
+}
