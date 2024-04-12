@@ -101,8 +101,8 @@ function getTabelas(
 
   if (mes && !ano) {
     const tabelas = tabelasDb.tabelas.filter((referencia) => {
-      const { mes } = referencia;
-      const mesReferencia = mes.split("/").at(0)?.trim();
+      const { mes: mesRef } = referencia;
+      const mesReferencia = mesRef.split("/").at(0)?.trim();
 
       return mes.toString() === mesReferencia?.toString();
     });
