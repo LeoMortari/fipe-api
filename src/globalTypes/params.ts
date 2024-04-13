@@ -1,5 +1,5 @@
 import { FastifyBaseLogger } from "fastify";
 
 export type TipoVeiculos = {
-  tipoVeiculo: "carros" | "caminhoes" | "motos";
+  tipoVeiculo: string | "carros" | "caminhoes" | "motos";
 };

@@ -1,13 +1,7 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 
-import {
-  carros,
-  caminhoes,
-  motos,
-  codigoCarros,
-} from "../constants/tipoVeiculos";
+import { carros, motos } from "../constants/tipoVeiculos";
 
-import { isNumber } from "../utils/numbers";
 import { TipoVeiculos } from "../globalTypes/params";
 
 //Databases
@@ -17,6 +11,9 @@ import caminhoesDb from "../db/caminhoes.json";
 import tabelasDb from "../db/tabelas.json";
 
 import { fipeApi } from "../config/axios";
+import { getCodigoTabela, getCodigoVeiculo } from "../utils/veiculos";
+import { statusErrors } from "../utils/requestErrors";
+import { responseFormat } from "../utils/response";
 
 /* 
 Função getMarcas () => {value: string | number, label: string}[]
@@ -35,10 +32,14 @@ function getMarcas(
   const { tipoVeiculo } = request.params;
 
   if (tipoVeiculo === carros) {
-    return reply.code(200).send(carrosDb.marcas);
+    return reply.code(statusErrors.SUCESS.OK).send(carrosDb.marcas);
   }
 
-  reply.code(200).send(tipoVeiculo === motos ? motosDb : caminhoesDb);
+  reply
+    .code(statusErrors.SUCESS.OK)
+    .send(
+      responseFormat({ content: tipoVeiculo === motos ? motosDb : caminhoesDb })
+    );
 }
 
 /* 
@@ -50,21 +51,58 @@ Função getVeiculosPorMarca () => void
 */
 async function getVeiculosPorMarca(
   request: FastifyRequest<{
-    Params: { tipoVeiculo: TipoVeiculos; tabela?: string };
-    Querystring: { marca: number };
+    Params: { tipoVeiculo: TipoVeiculos };
+    Querystring: { marca: number; tabela?: number };
   }>,
   reply: FastifyReply
 ) {
-  const { marca } = request.query;
+  const { marca, tabela } = request.query;
   const { tipoVeiculo } = request.params;
 
-  if (!marca || !isNumber(marca)) {
-    return reply.code(400).send("O parametro 'marca' deve ser um número");
+  if (!marca) {
+    return reply
+      .code(statusErrors.ERRORS.BAD_REQUEST)
+      .send("O parametro 'marca' deve ser um número");
   }
 
   try {
-    reply.code(202);
-  } catch (error: any) {}
+    const codigoTabela = getCodigoTabela(tabela);
+    const codigoTipoVeiculo = getCodigoVeiculo(tipoVeiculo);
+
+    if (!codigoTipoVeiculo) {
+      return reply
+        .code(statusErrors.ERRORS.BAD_REQUEST)
+        .send("O tipo do veiculo não foi informado");
+    }
+
+    const { data } = await fipeApi.post("/api/veiculos//ConsultarModelos", {
+      codigoTipoVeiculo,
+      codigoTabelaReferencia: codigoTabela,
+      codigoMarca: marca,
+    });
+
+    const result = {
+      modelos: data.Modelos?.map((item: { Label: string; Value: string }) => ({
+        label: item.Label,
+        value: item.Value,
+      })),
+      anos: data.Anos?.map((item: { Label: string; Value: string }) => ({
+        label: item.Label,
+        value: item.Value,
+      })),
+    };
+
+    reply
+      .code(statusErrors.SUCESS.OK)
+      .send(responseFormat({ content: result }));
+  } catch (error: any) {
+    if (error.response) {
+      // Se tiver response, é um erro do Axios
+      reply
+        .code(statusErrors.ERRORS.INTERNAL_SERVER_ERROR)
+        .send(responseFormat({ content: [] }));
+    }
+  }
 }
 
 /* 
@@ -84,7 +122,13 @@ function getTabelas(
 
   if (ano) {
     if (ano.toString() < "2001") {
-      return reply.code(400).send("O ano deve ser maior ou igual a 2001");
+      return reply.code(statusErrors.ERRORS.BAD_REQUEST).send(
+        responseFormat({
+          content: [],
+          error: true,
+          errorMessage: "O ano deve ser maior ou igual a 2001",
+        })
+      );
     }
   }
 
@@ -96,7 +140,9 @@ function getTabelas(
       return ano.toString() === anoReferencia?.toString();
     });
 
-    return reply.code(200).send(tabelas);
+    return reply
+      .code(statusErrors.SUCESS.OK)
+      .send(responseFormat({ content: tabelas }));
   }
 
   if (mes && !ano) {
@@ -107,7 +153,9 @@ function getTabelas(
       return mes.toString() === mesReferencia?.toString();
     });
 
-    return reply.code(200).send(tabelas);
+    return reply
+      .code(statusErrors.SUCESS.OK)
+      .send(responseFormat({ content: tabelas }));
   }
 
   if (mes && ano) {
@@ -117,10 +165,14 @@ function getTabelas(
       return mesReferencia.toString().trim() === `${mes}/${ano}`;
     });
 
-    return reply.code(200).send(tabelas);
+    return reply
+      .code(statusErrors.SUCESS.OK)
+      .send(responseFormat({ content: tabelas }));
   }
 
-  return reply.code(200).send(tabelasDb.tabelas);
+  return reply
+    .code(statusErrors.SUCESS.OK)
+    .send(responseFormat({ content: tabelasDb.tabelas }));
 }
 
 export { getMarcas, getVeiculosPorMarca, getTabelas };

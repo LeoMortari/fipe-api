@@ -1,13 +1,43 @@
-const statusErrors: Record<string, string> = {
-  400: "Parametros inválidos",
-  401: "Solicitação não autorizada",
-  403: "Erro ao processar feriados",
-  404: "Erro ao buscar feriados",
-  500: "Erro interno, contate um administrador",
+export const statusErrors = {
+  ERRORS: {
+    BAD_REQUEST: 400,
+    UNAUTHORIZED: 401,
+    FORBIDDEN: 403,
+    NOT_FOUND: 404,
+    METHOD_NOT_ALLOWED: 405,
+    REQUEST_TIMEOUT: 408,
+    CONFLICT: 409,
+    GONE: 410,
+    LENGTH_REQUIRED: 411,
+    PRECONDITION_FAILED: 412,
+    PAYLOAD_TOO_LARGE: 413,
+    URI_TOO_LONG: 414,
+    UNSUPPORTED_MEDIA_TYPE: 415,
+    REQUEST_RANGE_NOT_SATISFIABLE: 416,
+    EXPECTATION_FAILED: 417,
+    TEAPOT: 418,
+    INTERNAL_SERVER_ERROR: 500,
+    BAD_GATEWAY: 502,
+    SERVICE_UNAVAILABLE: 503,
+    GATEWAY_TIMEOUT: 504,
+    HTTP_VERSION_NOT_SUPPORTED: 505,
+    VARIANT_ALSO_NEGOTIATES: 506,
+    INSUFFICIENT_STORAGE: 507,
+    LOOP_DETECTED: 508,
+    CONNECTION_TIMEOUT: 509,
+    BANDWIDTH_LIMIT_EXCEEDED: 510,
+    NOT_IMPLEMENTED: 511,
+    NETWORK_AUTHENTICATION_REQUIRED: 512,
+  },
+  SUCESS: {
+    OK: 200,
+    CREATED: 201,
+    ACCEPTED: 202,
+    NO_CONTENT: 204,
+    MOVED_PERMANENTLY: 301,
+    FOUND: 302,
+    SEE_OTHER: 303,
+    NOT_MODIFIED: 304,
+    TEMPORARY_REDIRECT: 307,
+  },
 };
-
-const getStatusMessage = function (status: string | number) {
-  return status ? statusErrors[status] : "";
-};
-
-export { statusErrors, getStatusMessage };
